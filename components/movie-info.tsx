@@ -1,7 +1,7 @@
 import { API_URL } from '../app/(home)/page';
 import styles from '../styles/movie-info.module.css';
 
-async function getMovie(id: string) {
+export async function getMovie(id: string) {
   console.log(`Fetching movies: ${Date.now()}`);
   await new Promise(resolve => setTimeout(resolve, 5000));
   const response = await fetch(`${API_URL}/${id}`);
@@ -21,6 +21,8 @@ export default async function MovieInfo({ id }: { id: string }) {
         <a href={movie.homepage} target={'_blank'}>
           Homepage &rarr;
         </a>
+        <a href={`/movies/${id}/credits`}>More detail credits&rarr;</a>
+        <a href={`/movies/${id}/providers`}>More detail providers&rarr;</a>
       </div>
     </div>
   );
