@@ -1,4 +1,4 @@
-import { API_URL } from '../app/(home)/page';
+import { API_URL } from '../app/constants';
 import styles from '../styles/movie-providers.module.css';
 
 export async function getProviders(id: string) {
